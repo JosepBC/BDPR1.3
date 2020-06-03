@@ -1,3 +1,12 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
+
+drop database botiga;
+create database botiga;
+
+use botiga;
+
 CREATE TABLE Tipus (
     tipus varchar(255) PRIMARY KEY
 )  ENGINE = InnoDB;
@@ -22,7 +31,7 @@ CREATE TABLE Equivalent(
 )  ENGINE = InnoDB;
 
 CREATE TABLE Clients (
-        codi int UNSIGNED AUTO_INCREMENT not null PRIMARY KEY, --No se si hace falta el not null
+        codi int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         nom varchar(255),
         email varchar(255)
 )  ENGINE = InnoDB;
@@ -51,14 +60,14 @@ CREATE TABLE Factura (
 CREATE TABLE Particulars (
         codi int PRIMARY KEY,
         nom varchar(255),
-        email varchar(255)
-        CONSTRAINT fk_codi FOREIGN KEY (codi) REFERENCES Clients(codi)
+        email varchar(255),
+        CONSTRAINT fk_codi_particulars FOREIGN KEY (codi) REFERENCES Clients(codi)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Empreses (
         codi int PRIMARY KEY,
-        nif varchar(255) NOT NULL UNIQUE, --Clave secundaria, no he encontrado una definicion de Alternate Key en MySql/MariaDB....
-        CONSTRAINT fk_codi FOREIGN KEY (codi) REFERENCES Clients(codi)
+        nif varchar(255) NOT NULL UNIQUE,
+        CONSTRAINT fk_codi_empreses FOREIGN KEY (codi) REFERENCES Clients(codi)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Fills (
@@ -66,7 +75,7 @@ CREATE TABLE Fills (
         codi int,
         data_naix date,
         CONSTRAINT pk_fills PRIMARY KEY (nom, codi),
-        CONSTRAINT fk_codi FOREIGN KEY (codi) REFERENCES Particulars(codi)
+        CONSTRAINT fk_codi_fills FOREIGN KEY (codi) REFERENCES Particulars(codi)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Persones_contacte (
@@ -74,7 +83,7 @@ CREATE TABLE Persones_contacte (
         codi int,
         telef int,
         CONSTRAINT pk_persones_contacte PRIMARY KEY (nom, codi),
-        CONSTRAINT fk_codi FOREIGN KEY codi REFERENCES Particulars(codi)
+        CONSTRAINT fk_codi_persones_contacte FOREIGN KEY (codi) REFERENCES Particulars(codi)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Parentesc (
