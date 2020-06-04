@@ -85,6 +85,43 @@ CREATE TABLE Empreses (
         CONSTRAINT fk_codi_empreses FOREIGN KEY (codi) REFERENCES Clients(codi)
 ) ENGINE = InnoDB;
 
+DELIMITER $$
+CREATE PROCEDURE InsertClient(IN nom varchar(255), IN email varchar(255), IN tlf int, IN dni varchar(255), IN nif varchar(255))
+    BEGIN
+        INSERT INTO Clients (nom,
+            email)
+        VALUES (nom,
+            email);
+        SET @last_id = LAST_INSERT_ID();
+        IF (nif IS NULL) THEN
+            INSERT INTO Particulars (codi,
+                telf,
+                dni)
+            VALUES (@last_id,
+                tlf,
+                dni);
+        ELSEIF (dni IS NULL) THEN
+            INSERT INTO Empreses (codi,
+                nif)
+            VALUES (@last_id,
+                nif);
+        ELSE
+            INSERT INTO Particulars (codi,
+                telf,
+                dni)
+            VALUES (@last_id,
+                tlf,
+                dni);
+            
+            INSERT INTO Empreses (codi,
+                nif)
+            VALUES (@last_id,
+                nif);
+        END IF;
+    END $$
+
+DELIMITER ;
+
 CREATE TABLE Fills (
         nom varchar(255),
         codi int,
