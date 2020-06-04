@@ -23,12 +23,26 @@ CREATE TABLE Joguines (
         CONSTRAINT fk_complement FOREIGN KEY (complement_de) REFERENCES Joguines(codi_barres)
 )  ENGINE = InnoDB;
 
-CREATE TABLE Equivalent(
+CREATE TABLE Equivalent (
         joguina int, 
         joguina_equivalent int,
+        CONSTRAINT pk_equivalent PRIMARY KEY (joguina, joguina_equivalent),
         CONSTRAINT fk_joguina_eq1 FOREIGN KEY (joguina) REFERENCES Joguines(codi_barres),
         CONSTRAINT fk_joguina_eq2 FOREIGN KEY (joguina_equivalent) REFERENCES Joguines(codi_barres)
 )  ENGINE = InnoDB;
+
+
+DELIMITER $$
+CREATE TRIGGER Comprovar_redundancia BEFORE INSERT ON Equivalent 
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.joguina > NEW.joguina_equivalent) THEN
+            UPDATE Equivalent 
+            SET joguina = NEW.joguina_equivalent, joguina_equivalent = NEW.joguina 
+            WHERE joguina = NEW.joguina AND joguina_equivalent = joguina_equivalent;
+        END IF;
+    END $$
+DELIMITER ;
 
 CREATE TABLE Clients (
         codi int AUTO_INCREMENT PRIMARY KEY,
@@ -43,7 +57,8 @@ CREATE TABLE Encarrec (
         qt int,
         CONSTRAINT pk_encarrec PRIMARY KEY (client, joguina),
         CONSTRAINT fk_client_encarrec FOREIGN KEY (client) REFERENCES Clients(codi),
-        CONSTRAINT fk_joguina_encarrec FOREIGN KEY (joguina) REFERENCES Joguines(codi_barres)
+        CONSTRAINT fk_joguina_encarrec FOREIGN KEY (joguina) REFERENCES Joguines(codi_barres),
+        CONSTRAINT ck_encarrec CHECK (10 < qt AND qt < 1000)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Factura (
@@ -83,7 +98,7 @@ CREATE TABLE Persones_contacte (
         codi int,
         telef int,
         CONSTRAINT pk_persones_contacte PRIMARY KEY (nom, codi),
-        CONSTRAINT fk_codi_persones_contacte FOREIGN KEY (codi) REFERENCES Particulars(codi)
+        CONSTRAINT fk_codi_persones_contacte FOREIGN KEY (codi) REFERENCES Empreses(codi)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Parentesc (
@@ -92,5 +107,6 @@ CREATE TABLE Parentesc (
         grau char,
         CONSTRAINT pk_parentesc PRIMARY KEY (particular, parent),
         CONSTRAINT fk_particular_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi),
-        CONSTRAINT fk_parent_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi)
+        CONSTRAINT fk_parent_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi),
+        CONSTRAINT ch_parentesc CHECK (grau = "P" OR grau = "S" OR grau = "T" OR grau = "Q" OR grau = "C")
 ) ENGINE = InnoDB;
