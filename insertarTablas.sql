@@ -87,7 +87,7 @@ INSERT INTO Equivalent(joguina,
 		4);
 
 CALL InsertClient("Josep Bello", "josep.bello@estudiants.urv.cat", 123456789, "47860857Q", NULL);
-CALL InsertClient("Leandro Favio", "leandro.favio@estudiants.urv.cat", 123456788, "47860857P", NULL);
+CALL InsertClient("Aeandro Favio", "leandro.favio@estudiants.urv.cat", 123456788, "47860857P", NULL);
 CALL InsertClient("Oriol qt", "oriol.qt@estudiants.urv.cat", 153456788, NULL, "47860857F");
 CALL InsertClient("Marc das", "marc.dsa@estudiants.urv.cat", 173456788, "47860857A", "47860857A");
 
@@ -149,9 +149,15 @@ INSERT INTO Fills(nom,
 INSERT INTO Fills(nom,
 	codi,
 	data_naix)
-	VALUES ("Pepito",
+	VALUES ("Pepa",
 		1,
 		"2020-05-14");
+INSERT INTO Fills(nom,
+	codi,
+	data_naix)
+	VALUES ("Pepe",
+		2,
+		"1990-05-14");
 
 INSERT INTO Persones_contacte(nom,
 	codi,
