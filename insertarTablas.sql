@@ -128,6 +128,16 @@ INSERT INTO Factura(client,
 		2,
 		5,
 		12);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (3,
+		"2020-05-10",
+		2,
+		5,
+		10000);
 
 INSERT INTO Fills(nom,
 	codi,
@@ -135,6 +145,13 @@ INSERT INTO Fills(nom,
 	VALUES ("Pepito",
 		1,
 		"2000-10-14");
+
+INSERT INTO Fills(nom,
+	codi,
+	data_naix)
+	VALUES ("Pepito",
+		1,
+		"2020-05-14");
 
 INSERT INTO Persones_contacte(nom,
 	codi,
