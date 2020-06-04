@@ -83,17 +83,13 @@ INSERT INTO Equivalent(joguina,
 		1);
 INSERT INTO Equivalent(joguina, 
 	joguina_equivalent) 
-	VALUES (1, 
-		2);
+	VALUES (3, 
+		4);
 
-INSERT INTO Clients(nom,
-	email)
-	VALUES ("Josep Bello",
-		"josep.bello@estudiants.urv.cat");
-INSERT INTO Clients(nom,
-	email)
-	VALUES ("Leandro Favio",
-		"leandro.favio@estudiants.urv.cat");
+CALL InsertClient("Josep Bello", "josep.bello@estudiants.urv.cat", 123456789, "47860857Q", NULL);
+CALL InsertClient("Leandro Favio", "leandro.favio@estudiants.urv.cat", 123456788, "47860857P", NULL);
+CALL InsertClient("Oriol qt", "oriol.qt@estudiants.urv.cat", 153456788, NULL, "47860857F");
+CALL InsertClient("Marc das", "marc.dsa@estudiants.urv.cat", 173456788, "47860857A", "47860857A");
 
 INSERT INTO Encarrec(client,
 	joguina,
@@ -133,24 +129,6 @@ INSERT INTO Factura(client,
 		5,
 		12);
 
-INSERT INTO Particulars(codi,
-	telf,
-	dni)
-	VALUES (1,
-		123456789,
-		"77920048-M");
-INSERT INTO Particulars(codi,
-	telf,
-	dni)
-	VALUES (2,
-		023456789,
-		"77925448-Q");
-
-INSERT INTO Empreses(codi,
-	nif) 
-	VALUES (2,
-		"77925448-Q");
-
 INSERT INTO Fills(nom,
 	codi,
 	data_naix)
@@ -162,7 +140,7 @@ INSERT INTO Persones_contacte(nom,
 	codi,
 	telef)
 	VALUES ("Miriam",
-		2,
+		3,
 		123456788);
 
 INSERT INTO Parentesc(particular,
