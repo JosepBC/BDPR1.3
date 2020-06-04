@@ -31,7 +31,7 @@ CREATE TABLE Equivalent(
 )  ENGINE = InnoDB;
 
 CREATE TABLE Clients (
-        codi int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        codi int AUTO_INCREMENT PRIMARY KEY,
         nom varchar(255),
         email varchar(255)
 )  ENGINE = InnoDB;
@@ -91,6 +91,6 @@ CREATE TABLE Parentesc (
         parent int,
         grau int,
         CONSTRAINT pk_parentesc PRIMARY KEY (particular, parent),
-        CONSTRAINT fk_particular_parentesc FOREIGN KEY (particular) REFERENCES Particular(codi),
-        CONSTRAINT fk_parent_parentesc FOREIGN KEY (particular) REFERENCES Particular(codi)
+        CONSTRAINT fk_particular_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi),
+        CONSTRAINT fk_parent_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi)
 ) ENGINE = InnoDB;
