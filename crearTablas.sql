@@ -89,7 +89,7 @@ CREATE TABLE Persones_contacte (
 CREATE TABLE Parentesc (
         particular int,
         parent int,
-        grau varchar(255),
+        grau char,
         CONSTRAINT pk_parentesc PRIMARY KEY (particular, parent),
         CONSTRAINT fk_particular_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi),
         CONSTRAINT fk_parent_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi)

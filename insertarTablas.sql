@@ -166,4 +166,4 @@ INSERT INTO Parentesc(particular,
 	grau)
 	VALUES (2,
 		1,
-		"Germà");
+		"P");
