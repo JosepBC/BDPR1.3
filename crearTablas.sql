@@ -59,8 +59,8 @@ CREATE TABLE Factura (
 
 CREATE TABLE Particulars (
         codi int PRIMARY KEY,
-        nom varchar(255),
-        email varchar(255),
+        telf int,
+        dni varchar(255),
         CONSTRAINT fk_codi_particulars FOREIGN KEY (codi) REFERENCES Clients(codi)
 ) ENGINE = InnoDB;
 
@@ -89,7 +89,7 @@ CREATE TABLE Persones_contacte (
 CREATE TABLE Parentesc (
         particular int,
         parent int,
-        grau int,
+        grau varchar(255),
         CONSTRAINT pk_parentesc PRIMARY KEY (particular, parent),
         CONSTRAINT fk_particular_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi),
         CONSTRAINT fk_parent_parentesc FOREIGN KEY (particular) REFERENCES Particulars(codi)
