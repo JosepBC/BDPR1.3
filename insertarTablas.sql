@@ -13,7 +13,7 @@ INSERT INTO Joguines(codi_barres,
 	preu,
 	tipus,
 	complement_de) 
-	VALUES (12345,
+	VALUES (1,
 		"Pilota FCB", 
 		1,
 		30,
@@ -27,7 +27,7 @@ INSERT INTO Joguines(codi_barres,
 	preu,
 	tipus,
 	complement_de) 
-	VALUES (123455,
+	VALUES (2,
 		"Pilota Madrid", 
 		1,
 		30,
@@ -41,7 +41,7 @@ INSERT INTO Joguines(codi_barres,
 	preu,
 	tipus,
 	complement_de) 
-	VALUES (23456,
+	VALUES (3,
 		"Mini Moto", 
 		5,
 		12,
@@ -55,7 +55,7 @@ INSERT INTO Joguines(codi_barres,
 	preu,
 	tipus,
 	complement_de) 
-	VALUES (34567,
+	VALUES (4,
 		"Barbie", 
 		5,
 		12,
@@ -69,18 +69,22 @@ INSERT INTO Joguines(codi_barres,
 	preu,
 	tipus,
 	complement_de) 
-	VALUES (345672,
+	VALUES (5,
 		"Vestit", 
 		5,
 		12,
 		5,
 		"Nina",
-		34567);
+		2);
 
 INSERT INTO Equivalent(joguina, 
 	joguina_equivalent) 
-	VALUES (12345, 
-		123455);
+	VALUES (2, 
+		1);
+INSERT INTO Equivalent(joguina, 
+	joguina_equivalent) 
+	VALUES (1, 
+		2);
 
 INSERT INTO Clients(nom,
 	email)
@@ -96,17 +100,17 @@ INSERT INTO Encarrec(client,
 	data,
 	qt)
 	VALUES (1,
-		12345,
+		1,
 		"2020-11-18",
-		2);
+		20);
 INSERT INTO Encarrec(client,
 	joguina,
 	data,
 	qt)
 	VALUES (2,
-		34567,
+		2,
 		"2020-05-10",
-		5);
+		12);
 
 INSERT INTO Factura(client,
 	data,
@@ -115,7 +119,7 @@ INSERT INTO Factura(client,
 	preu_un)
 	VALUES (1,
 		"2020-11-18",
-		12345,
+		1,
 		2,
 		50);
 INSERT INTO Factura(client,
@@ -125,7 +129,7 @@ INSERT INTO Factura(client,
 	preu_un)
 	VALUES (2,
 		"2020-05-10",
-		34567,
+		2,
 		5,
 		12);
 
