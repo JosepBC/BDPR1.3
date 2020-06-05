@@ -90,6 +90,7 @@ CALL InsertClient("Josep Bello", "josep.bello@estudiants.urv.cat", 123456789, "4
 CALL InsertClient("Aeandro Favio", "leandro.favio@estudiants.urv.cat", 123456788, "47860857P", NULL);
 CALL InsertClient("Oriol qt", "oriol.qt@estudiants.urv.cat", 153456788, NULL, "47860857F");
 CALL InsertClient("Marc das", "marc.dsa@estudiants.urv.cat", 173456788, "47860857A", "47860857A");
+CALL InsertClient("Empresa e", "empresa.e@estudiants.urv.cat", 173456777, NULL, "B54543443F");
 
 INSERT INTO Encarrec(client,
 	joguina,
@@ -107,6 +108,23 @@ INSERT INTO Encarrec(client,
 		2,
 		"2020-05-10",
 		12);
+INSERT INTO Encarrec(client,
+	joguina,
+	data,
+	qt)
+	VALUES (2,
+		2,
+		"2020-05-10",
+		12);
+INSERT INTO Encarrec(client,
+	joguina,
+	data,
+	qt)
+	VALUES (3,
+		2,
+		"2010-05-10",
+		12);
+
 
 INSERT INTO Factura(client,
 	data,
@@ -114,9 +132,9 @@ INSERT INTO Factura(client,
 	qt,
 	preu_un)
 	VALUES (1,
-		"2020-11-18",
+		"2019-11-18",
 		1,
-		2,
+		11,
 		50);
 INSERT INTO Factura(client,
 	data,
@@ -124,9 +142,9 @@ INSERT INTO Factura(client,
 	qt,
 	preu_un)
 	VALUES (2,
-		"2020-05-10",
+		"2019-05-10",
 		2,
-		5,
+		10,
 		12);
 INSERT INTO Factura(client,
 	data,
@@ -134,8 +152,68 @@ INSERT INTO Factura(client,
 	qt,
 	preu_un)
 	VALUES (3,
-		"2020-05-10",
+		"2019-05-10",
 		2,
+		6,
+		10000);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (4,
+		"2019-05-10",
+		2,
+		2,
+		10000);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (4,
+		"2019-07-10",
+		2,
+		4,
+		10000);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (5,
+		"2019-05-10",
+		2,
+		5,
+		10000);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (5,
+		"2020-06-05",
+		2,
+		5,
+		10000);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (5,
+		"2020-06-05",
+		1,
+		5,
+		10000);
+INSERT INTO Factura(client,
+	data,
+	joguina,
+	qt,
+	preu_un)
+	VALUES (2,
+		"2020-06-05",
+		1,
 		5,
 		10000);
 
@@ -145,12 +223,11 @@ INSERT INTO Fills(nom,
 	VALUES ("Pepito",
 		1,
 		"2000-10-14");
-
 INSERT INTO Fills(nom,
 	codi,
 	data_naix)
 	VALUES ("Pepa",
-		1,
+		4,
 		"2020-05-14");
 INSERT INTO Fills(nom,
 	codi,
