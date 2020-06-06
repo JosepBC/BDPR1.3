@@ -5,6 +5,7 @@
 INSERT INTO Tipus(tipus) VALUES ("Pilota");
 INSERT INTO Tipus(tipus) VALUES ("Moto");
 INSERT INTO Tipus(tipus) VALUES ("Nina");
+INSERT INTO Tipus(tipus) VALUES ("Lego");
 
 INSERT INTO Joguines(codi_barres, 
 	nom, 
@@ -76,6 +77,34 @@ INSERT INTO Joguines(codi_barres,
 		5,
 		"Nina",
 		2);
+INSERT INTO Joguines(codi_barres, 
+	nom, 
+	edat_min, 
+	edat_max,
+	preu,
+	tipus,
+	complement_de) 
+	VALUES (6,
+		"Lamborghini Sian FKP 37", 
+		18,
+		99,
+		379,
+		"Lego",
+		NULL);
+INSERT INTO Joguines(codi_barres, 
+	nom, 
+	edat_min, 
+	edat_max,
+	preu,
+	tipus,
+	complement_de) 
+	VALUES (7,
+		"Vehiculo Acrobatico a Control Remoto", 
+		18,
+		99,
+		89,
+		"Lego",
+		NULL);
 
 INSERT INTO Equivalent(joguina, 
 	joguina_equivalent) 
@@ -124,6 +153,30 @@ INSERT INTO Encarrec(client,
 		2,
 		"2010-05-10",
 		12);
+INSERT INTO Encarrec(client,
+	joguina,
+	data,
+	qt)
+	VALUES (1,
+		6,
+		"2018-03-28",
+		15);
+INSERT INTO Encarrec(client,
+	joguina,
+	data,
+	qt)
+	VALUES (1,
+		7,
+		"2018-03-28",
+		32);
+INSERT INTO Encarrec(client,
+	joguina,
+	data,
+	qt)
+	VALUES (2,
+		6,
+		"2017-10-21",
+		78);
 
 
 INSERT INTO Factura(client,
