@@ -5,11 +5,8 @@
 INSERT INTO Tipus(tipus) VALUES ("Pilota");
 INSERT INTO Tipus(tipus) VALUES ("Moto");
 INSERT INTO Tipus(tipus) VALUES ("Nina");
-<<<<<<< HEAD
 INSERT INTO Tipus(tipus) VALUES ("Jet");
-=======
 INSERT INTO Tipus(tipus) VALUES ("Lego");
->>>>>>> b4c6c9fc57043ed9475dabb18a32468a096893ad
 
 INSERT INTO Joguines(codi_barres, 
 	nom, 
@@ -89,14 +86,20 @@ INSERT INTO Joguines(codi_barres,
 	tipus,
 	complement_de) 
 	VALUES (6,
-<<<<<<< HEAD
 		"Avion", 
 		5,
 		12,
 		5,
 		"Jet",
 		2);
-=======
+INSERT INTO Joguines(codi_barres, 
+	nom, 
+	edat_min, 
+	edat_max,
+	preu,
+	tipus,
+	complement_de) 
+	VALUES (7,
 		"Lamborghini Sian FKP 37", 
 		18,
 		99,
@@ -117,7 +120,6 @@ INSERT INTO Joguines(codi_barres,
 		89,
 		"Lego",
 		NULL);
->>>>>>> b4c6c9fc57043ed9475dabb18a32468a096893ad
 
 INSERT INTO Equivalent(joguina, 
 	joguina_equivalent) 
