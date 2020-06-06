@@ -1,3 +1,7 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
+
 SELECT 
 	Clients.nom AS Nom_Client
 FROM ((Clients

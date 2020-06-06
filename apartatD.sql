@@ -1,3 +1,6 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
 
 SELECT t.client 
 FROM (

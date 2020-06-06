@@ -1,3 +1,7 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
+
 SELECT 
 	Joguines.nom AS Nom_joguina,
 	Joguines.codi_barres AS Codi_barres_joguina

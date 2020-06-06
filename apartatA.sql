@@ -1,3 +1,7 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
+
 SELECT
 	Particulars.codi AS Pare_Id,
 	Clients.nom AS Nom_Pare,

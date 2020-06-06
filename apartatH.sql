@@ -1,3 +1,7 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
+
 DELETE FROM
 	Clients
 WHERE codi IN

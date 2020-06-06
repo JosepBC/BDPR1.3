@@ -1,3 +1,7 @@
+-- Practica 3a Part
+-- Josep Bello Curto
+-- Leandro Favio Gomez Racca
+
 CREATE VIEW Historic AS
 SELECT 
 	Clients.nom AS Nom_Client,
