@@ -1,24 +1,19 @@
 SELECT 
-	Clients.codi, Clients.nom, Encarrec.qt
-FROM 
-	Encarrec
-INNER JOIN 
-	Particulars
-ON 
-	Encarrec.client = Particulars.codi
-INNER JOIN 
-	Clients
-ON 
-	Encarrec.client = Clients.codi
-WHERE
-	Encarrec.qt > (SELECT 
-					SUM(qt)
-				FROM 
-					Encarrec
-				WHERE
-					client = (SELECT
-								codi
-							  FROM
-							  	Empreses
-							   WHERE
-							   	nif = "B54543443F"));
+	Clients.nom AS Nom_client,
+	Clients.codi AS Codi_client,
+	SUM(qt) AS Total_comanda
+FROM ((Particulars
+INNER JOIN Encarrec ON Particulars.codi = Encarrec.client)
+INNER JOIN Clients ON Clients.codi = Particulars.codi)
+GROUP BY Clients.codi
+HAVING SUM(qt) > (SELECT 
+						SUM(qt)
+					FROM 
+						Encarrec
+					WHERE
+						client = (SELECT
+									codi
+								  FROM
+								  	Empreses
+								   WHERE
+								   	nif = "B54543443F"));
