@@ -1,20 +1,20 @@
 SELECT 
-	Clients.codi, Clients.nom, Factura.qt
+	Clients.codi, Clients.nom, Encarrec.qt
 FROM 
-	Factura
+	Encarrec
 INNER JOIN 
 	Particulars
 ON 
-	Factura.client = Particulars.codi
+	Encarrec.client = Particulars.codi
 INNER JOIN 
 	Clients
 ON 
-	Factura.client = Clients.codi
+	Encarrec.client = Clients.codi
 WHERE
-	Factura.qt > (SELECT 
+	Encarrec.qt > (SELECT 
 					SUM(qt)
 				FROM 
-					Factura
+					Encarrec
 				WHERE
 					client = (SELECT
 								codi
