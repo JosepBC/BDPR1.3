@@ -195,6 +195,14 @@ INSERT INTO Encarrec(client,
 		7,
 		"2017-10-21",
 		78);
+INSERT INTO Encarrec(client,
+	joguina,
+	data,
+	qt)
+	VALUES (5,
+		2,
+		"2019-05-10",
+		16);
 
 INSERT INTO Encarrec(client,
 	joguina,
