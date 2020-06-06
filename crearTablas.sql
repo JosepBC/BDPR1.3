@@ -12,7 +12,7 @@ CREATE TABLE Tipus (
 )  ENGINE = InnoDB;
 
 CREATE TABLE Joguines (
-        codi_barres int PRIMARY KEY,
+        codi_barres int AUTO_INCREMENT PRIMARY KEY,
         nom varchar(255),
         edat_min int,
         edat_max int,
